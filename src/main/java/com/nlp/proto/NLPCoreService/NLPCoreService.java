@@ -57,7 +57,7 @@ public class NLPCoreService {
 	
 	private static Tesseract getTesseract() {
 		Tesseract instance = new Tesseract();
-		instance.setDatapath("C:\\Users\\somna\\OneDrive\\Documents\\Tess4J-3.4.8-src\\Tess4J\\tessdata");
+		instance.setDatapath("");
 		instance.setLanguage("eng");
 		return instance;
 	}
@@ -65,7 +65,7 @@ public class NLPCoreService {
 	private byte[] redactorService(MultipartFile multipartFile) {
 
 		Tesseract tesseract = getTesseract();
-		File file = new File("C:\\Users\\somna\\OneDrive\\Documents\\input.pdf");
+		File file = new File("");
 
 		String result = "";
 		try {
@@ -91,7 +91,7 @@ public class NLPCoreService {
 		
 		try {
 			Document document = new Document();
-			PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\somna\\OneDrive\\Documents\\iTextHelloWorld.pdf"));
+			PdfWriter.getInstance(document, new FileOutputStream(""));
 			 
 			document.open();
 			Paragraph text = new Paragraph("");
@@ -107,7 +107,7 @@ public class NLPCoreService {
 			e.printStackTrace();
 		}
 		
-		return new FileInputStream("C:\\Users\\somna\\OneDrive\\Documents\\iTextHelloWorld.pdf").readAllBytes();
+		return new FileInputStream("").readAllBytes();
 
 	}
 
