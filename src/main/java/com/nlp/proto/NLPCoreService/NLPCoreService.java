@@ -72,7 +72,6 @@ public class NLPCoreService {
 			multipartFile.transferTo(file);
 			result = tesseract.doOCR(file);
 		} catch (TesseractException | IllegalStateException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println(result);
@@ -83,7 +82,6 @@ public class NLPCoreService {
 		try {
 			docbytearray = createPDF(redactedsentences);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return docbytearray;
@@ -101,14 +99,11 @@ public class NLPCoreService {
 			for(String sentence: redactedsentences) {
 				text = new Paragraph(sentence,font);
 				document.add(text);
-				//document.add(Chunk.NEWLINE);
 			}
 			document.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
